@@ -13,7 +13,7 @@ An unofficial Duolingo companion for your terminal: streaks, leagues, XP charts,
 
 ## Install
 
-Requires Node.js 20 or newer.
+Requires Node.js 22.12 or newer.
 
 ```bash
 npm install -g github:MuhammadMurtuzaHussain/duo-owl-cli
