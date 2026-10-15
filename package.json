@@ -1,0 +1,35 @@
+{
+  "name": "duo-owl-cli",
+  "version": "0.1.0",
+  "description": "An unofficial, slightly unhinged Duolingo companion for your terminal. Streaks, leagues, XP charts, quizzes and guilt trips.",
+  "type": "module",
+  "bin": {
+    "owl": "bin/owl.js"
+  },
+  "files": [
+    "bin",
+    "src"
+  ],
+  "scripts": {
+    "start": "node bin/owl.js",
+    "test": "node --test \"test/*.test.js\""
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "duolingo",
+    "cli",
+    "streak",
+    "language-learning",
+    "terminal"
+  ],
+  "author": "Muhammad Murtuza Hussain",
+  "license": "MIT",
+  "dependencies": {
+    "@inquirer/prompts": "^8.7.3",
+    "chalk": "^6.0.1",
+    "commander": "^15.0.0",
+    "string-width": "^8.3.0"
+  }
+}

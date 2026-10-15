@@ -1,0 +1,21 @@
+name: test
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: smoke test the CLI against recorded data
+        run: |
+          export OWL_CONFIG_DIR="$RUNNER_TEMP/owl"
+          export DUOLINGO_JWT="x.$(printf '{"sub":1}' | base64 | tr '+/' '-_' | tr -d '=').y"
+          for c in me streak league xp friends courses; do node --import ./test/mock-fetch.js bin/owl.js $c; done

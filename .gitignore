@@ -1,0 +1,4 @@
+node_modules/
+.owl-test/
+.DS_Store
+*.log
